@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ContentArea.css';
 import ProgressBar from './ProgressBar';
 import SpeedTest from './SpeedTest';
-import { FaNetworkWired, FaLaptopCode, FaShieldAlt, FaEnvelope, FaTools, FaPrint, FaDesktop, FaKey, FaLock, FaPaperclip, FaWindows, FaApple, FaRegQuestionCircle, FaMicrochip, FaMemory, FaHdd, FaBatteryHalf, FaClock } from 'react-icons/fa';
+import { FaNetworkWired, FaLaptopCode, FaShieldAlt, FaEnvelope, FaTools, FaPrint, FaDesktop, FaKey, FaLock, FaPaperclip, FaWindows, FaApple, FaRegQuestionCircle, FaMicrochip, FaMemory, FaHdd, FaBatteryHalf, FaClock, FaKeyboard, FaMousePointer, FaVolumeUp, FaChartBar, FaPaintBrush, FaBolt, FaPlus, FaRocket } from 'react-icons/fa';
 import Modal from 'react-modal';
 
 const ContentArea = ({ selectedSection }) => {
@@ -28,28 +28,28 @@ const ContentArea = ({ selectedSection }) => {
   const hardwareOptions = [
     {
       id: 'keyboard',
-      icon: '⌨️',
+      icon: <FaKeyboard style={{ fontSize: 24 }} />,
       title: 'Keyboard Issues',
       description: 'Troubleshoot keyboard problems',
       url: 'https://support.microsoft.com/en-us/windows/keyboard-troubleshooting-f8be5b8a-99bc-22e9-3144-6bf1494f18e1'
     },
     {
       id: 'mouse',
-      icon: '🖱️',
+      icon: <FaMousePointer style={{ fontSize: 24 }} />,
       title: 'Mouse Problems',
       description: 'Fix mouse and touchpad issues',
       url: 'https://support.microsoft.com/en-us/windows/mouse-problems-in-windows-d90ee50a-fa52-0b19-4e60-8d94-e94a5b2e8e3f'
     },
     {
       id: 'display',
-      icon: '🖥️',
+      icon: <FaDesktop style={{ fontSize: 24 }} />,
       title: 'Display Issues',
       description: 'Resolve screen and monitor problems',
       url: 'https://support.microsoft.com/en-us/windows/troubleshoot-display-problems-in-windows-3abdf6a1-46e5-40fb-837f-1e955be62f3b'
     },
     {
       id: 'audio',
-      icon: '🔊',
+      icon: <FaVolumeUp style={{ fontSize: 24 }} />,
       title: 'Audio Problems',
       description: 'Fix sound and audio issues',
       url: 'https://support.microsoft.com/en-us/windows/fix-sound-problems-in-windows-73025246-b61c-40fb-671a-2535c7cd56c8'
@@ -59,21 +59,21 @@ const ContentArea = ({ selectedSection }) => {
   const softwareLicenseOptions = [
     {
       id: 'office365',
-      icon: '📊',
+      icon: <FaChartBar style={{ fontSize: 24 }} />,
       title: 'Office 365',
       description: 'Manage Microsoft Office licenses',
       url: 'https://admin.microsoft.com/Adminportal/Home#/licenses'
     },
     {
       id: 'adobe',
-      icon: '🎨',
+      icon: <FaPaintBrush style={{ fontSize: 24 }} />,
       title: 'Adobe Creative Cloud',
       description: 'Manage Adobe CC licenses',
       url: 'https://adminconsole.adobe.com/licenses'
     },
     {
       id: 'windows',
-      icon: '🪟',
+      icon: <FaWindows style={{ fontSize: 24 }} />,
       title: 'Windows License',
       description: 'Windows activation and licensing',
       url: 'https://www.microsoft.com/licensing/servicecenter'
@@ -289,7 +289,7 @@ const ContentArea = ({ selectedSection }) => {
           }}
           disabled={isInstalling}
         >
-          <span className="action-icon">🔒</span>
+          <span className="action-icon"><FaLock style={{ fontSize: 24 }} /></span>
           <div className="action-text">
             <h4>Install VPN</h4>
             <p>Set up secure VPN connection</p>
@@ -300,7 +300,7 @@ const ContentArea = ({ selectedSection }) => {
           onClick={startNetworkDiagnosis}
           disabled={diagnosisRunning}
         >
-          <span className="action-icon">🩺</span>
+          <span className="action-icon"><FaRegQuestionCircle style={{ fontSize: 24 }} /></span>
           <div className="action-text">
             <h4>Network Diagnosis</h4>
             <p>Run a full network diagnostic and reset</p>
@@ -311,7 +311,7 @@ const ContentArea = ({ selectedSection }) => {
           onClick={handleStartSpeedTest}
           disabled={showSpeedTest}
         >
-          <span className="action-icon">⚡</span>
+          <span className="action-icon"><FaBolt style={{ fontSize: 24 }} /></span>
           <div className="action-text">
             <h4>Speed Test</h4>
             <p>Check your network speed</p>
@@ -453,80 +453,97 @@ const ContentArea = ({ selectedSection }) => {
   );
 
   const renderOptimizationContent = () => (
-    <div className="content-section">
-      <h2>Device Optimization</h2>
-      <div style={{ marginBottom: '2rem', display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
-        <div style={{ flex: '1 1 200px', background: '#f8f9fa', borderRadius: 12, padding: 24, display: 'flex', alignItems: 'center', gap: 16 }}>
-          <FaDesktop size={32} color="#4CAF50" />
+    <div className="content-section" style={{ maxWidth: 1100, margin: '0 auto' }}>
+      <h2 style={{ fontWeight: 800, fontSize: '2.2rem', marginBottom: 32 }}>Device Optimization</h2>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+        gap: '2rem',
+        marginBottom: '2.5rem',
+      }}>
+        <div style={{ background: '#fff', borderRadius: 16, boxShadow: '0 2px 12px rgba(44,62,80,0.07)', padding: 28, display: 'flex', alignItems: 'center', gap: 18 }}>
+          <FaDesktop size={36} color="#4CAF50" />
           <div>
-            <div style={{ fontWeight: 600 }}>Platform</div>
-            <div>{deviceStats.platform} ({deviceStats.arch})</div>
+            <div style={{ fontWeight: 700, color: '#222', fontSize: 16 }}>Platform</div>
+            <div style={{ color: '#666', fontSize: 15 }}>{deviceStats.platform} ({deviceStats.arch})</div>
           </div>
         </div>
-        <div style={{ flex: '1 1 200px', background: '#f8f9fa', borderRadius: 12, padding: 24, display: 'flex', alignItems: 'center', gap: 16 }}>
-          <FaMicrochip size={32} color="#2196F3" />
+        <div style={{ background: '#fff', borderRadius: 16, boxShadow: '0 2px 12px rgba(44,62,80,0.07)', padding: 28, display: 'flex', alignItems: 'center', gap: 18 }}>
+          <FaMicrochip size={36} color="#2196F3" />
           <div>
-            <div style={{ fontWeight: 600 }}>CPU</div>
-            <div>{deviceStats.cpuModel} ({deviceStats.cpus} cores)</div>
+            <div style={{ fontWeight: 700, color: '#222', fontSize: 16 }}>CPU</div>
+            <div style={{ color: '#666', fontSize: 15 }}>{deviceStats.cpuModel} ({deviceStats.cpus} cores)</div>
           </div>
         </div>
-        <div style={{ flex: '1 1 200px', background: '#f8f9fa', borderRadius: 12, padding: 24, display: 'flex', alignItems: 'center', gap: 16 }}>
-          <FaMemory size={32} color="#FFC107" />
+        <div style={{ background: '#fff', borderRadius: 16, boxShadow: '0 2px 12px rgba(44,62,80,0.07)', padding: 28, display: 'flex', alignItems: 'center', gap: 18 }}>
+          <FaMemory size={36} color="#FFC107" />
           <div>
-            <div style={{ fontWeight: 600 }}>RAM</div>
-            <div>{deviceStats.freeMem} GB free / {deviceStats.totalMem} GB total</div>
+            <div style={{ fontWeight: 700, color: '#222', fontSize: 16 }}>RAM</div>
+            <div style={{ color: '#666', fontSize: 15 }}>{deviceStats.freeMem} GB free / {deviceStats.totalMem} GB total</div>
           </div>
         </div>
         {deviceStats.disk && (
-          <div style={{ flex: '1 1 200px', background: '#f8f9fa', borderRadius: 12, padding: 24, display: 'flex', alignItems: 'center', gap: 16 }}>
-            <FaHdd size={32} color="#9C27B0" />
+          <div style={{ background: '#fff', borderRadius: 16, boxShadow: '0 2px 12px rgba(44,62,80,0.07)', padding: 28, display: 'flex', alignItems: 'center', gap: 18 }}>
+            <FaHdd size={36} color="#9C27B0" />
             <div>
-              <div style={{ fontWeight: 600 }}>Storage</div>
-              <div>{deviceStats.disk}</div>
+              <div style={{ fontWeight: 700, color: '#222', fontSize: 16 }}>Storage</div>
+              <div style={{ color: '#666', fontSize: 15 }}>{deviceStats.disk}</div>
             </div>
           </div>
         )}
         {deviceStats.battery && (
-          <div style={{ flex: '1 1 200px', background: '#f8f9fa', borderRadius: 12, padding: 24, display: 'flex', alignItems: 'center', gap: 16 }}>
-            <FaBatteryHalf size={32} color="#FF5722" />
+          <div style={{ background: '#fff', borderRadius: 16, boxShadow: '0 2px 12px rgba(44,62,80,0.07)', padding: 28, display: 'flex', alignItems: 'center', gap: 18 }}>
+            <FaBatteryHalf size={36} color="#FF5722" />
             <div>
-              <div style={{ fontWeight: 600 }}>Battery</div>
-              <div>{deviceStats.battery}</div>
+              <div style={{ fontWeight: 700, color: '#222', fontSize: 16 }}>Battery</div>
+              <div style={{ color: '#666', fontSize: 15 }}>{deviceStats.battery}</div>
             </div>
           </div>
         )}
-        <div style={{ flex: '1 1 200px', background: '#f8f9fa', borderRadius: 12, padding: 24, display: 'flex', alignItems: 'center', gap: 16 }}>
-          <FaClock size={32} color="#607D8B" />
+        <div style={{ background: '#fff', borderRadius: 16, boxShadow: '0 2px 12px rgba(44,62,80,0.07)', padding: 28, display: 'flex', alignItems: 'center', gap: 18 }}>
+          <FaClock size={36} color="#607D8B" />
           <div>
-            <div style={{ fontWeight: 600 }}>Uptime</div>
-            <div>{deviceStats.uptime} min</div>
+            <div style={{ fontWeight: 700, color: '#222', fontSize: 16 }}>Uptime</div>
+            <div style={{ color: '#666', fontSize: 15 }}>{deviceStats.uptime} min</div>
           </div>
         </div>
       </div>
-      <button
-        className="optimise-fullwidth"
-        onClick={startOptimize}
-        disabled={optimizing}
-      >
-        <span className="action-icon" style={{ fontSize: 32, marginRight: 16 }}>🚀</span>
-        <div className="action-text">
-          <h4 style={{ margin: 0, fontSize: '1.3rem' }}>Optimize Device</h4>
-          <p style={{ margin: 0, fontSize: '1rem', fontWeight: 400 }}>Clean up temp files and optimize system</p>
-        </div>
-      </button>
-      <div className="action-content">
-        {optimizing && (
-          <div className="diagnostics-content">
-            <h3>Optimization Progress</h3>
-            <pre style={{ textAlign: 'left', background: '#f8f9fa', padding: '1rem', borderRadius: 8, maxHeight: 300, overflowY: 'auto' }}>{optimizeLog.join('\n')}</pre>
-            <p style={{ color: '#888' }}>Running...</p>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 36 }}>
+        <button
+          className="optimise-fullwidth"
+          onClick={startOptimize}
+          disabled={optimizing}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 18,
+            background: 'linear-gradient(90deg, #4CAF50 0%, #2196F3 100%)',
+            color: '#fff',
+            border: 'none',
+            borderRadius: 16,
+            padding: '1.2rem 2.5rem',
+            fontSize: '1.3rem',
+            fontWeight: 700,
+            boxShadow: '0 4px 24px rgba(44,62,80,0.10)',
+            cursor: optimizing ? 'not-allowed' : 'pointer',
+            transition: 'background 0.2s, box-shadow 0.2s',
+            minWidth: 340,
+          }}
+        >
+          <FaRocket style={{ fontSize: 32 }} />
+          <div style={{ textAlign: 'left' }}>
+            <div style={{ fontWeight: 800, fontSize: '1.3rem', marginBottom: 2 }}>Optimize Device</div>
+            <div style={{ fontSize: '1rem', fontWeight: 400, opacity: 0.92 }}>Clean up temp files and optimize system</div>
           </div>
-        )}
-        {optimizeDone && !optimizing && (
-          <div className="diagnostics-content">
-            <h3>Optimization Progress</h3>
-            <pre style={{ textAlign: 'left', background: '#f8f9fa', padding: '1rem', borderRadius: 8, maxHeight: 300, overflowY: 'auto' }}>{optimizeLog.join('\n')}</pre>
-            <p style={{ color: '#4CAF50', fontWeight: 600 }}>Completed</p>
+        </button>
+      </div>
+      <div className="action-content" style={{ maxWidth: 900, margin: '0 auto' }}>
+        {(optimizing || optimizeDone) && (
+          <div className="diagnostics-content" style={{ background: '#fff', borderRadius: 14, boxShadow: '0 2px 12px rgba(44,62,80,0.07)', padding: 28, marginTop: 18 }}>
+            <h3 style={{ fontWeight: 700, fontSize: 20, marginBottom: 18, color: '#222' }}>Optimization Progress</h3>
+            <pre style={{ textAlign: 'left', background: '#f8f9fa', padding: '1rem', borderRadius: 8, maxHeight: 300, overflowY: 'auto', fontSize: 15 }}>{optimizeLog.join('\n')}</pre>
+            {optimizing && <p style={{ color: '#888', marginTop: 10 }}>Running...</p>}
+            {optimizeDone && !optimizing && <p style={{ color: '#4CAF50', fontWeight: 600, marginTop: 10 }}>Completed</p>}
           </div>
         )}
       </div>

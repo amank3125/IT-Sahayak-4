@@ -1,6 +1,7 @@
 import React from 'react';
 import './Sidebar.css';
 import { FaNetworkWired, FaLaptopCode, FaShieldAlt, FaEnvelope, FaTools, FaPrint, FaDesktop, FaRegQuestionCircle, FaRocket, FaUsers } from 'react-icons/fa';
+import logo from '../../assets/logo.png';
 
 const Sidebar = ({ selectedSection, onSectionChange }) => {
   const menuItems = [
@@ -63,7 +64,7 @@ const Sidebar = ({ selectedSection, onSectionChange }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <img src="logo.png" alt="IT Sahayak Logo" style={{ width: 80, display: 'block', margin: '0 auto 1rem' }} />
+        <img src={logo} alt="IT Sahayak Logo" style={{ width: 80, display: 'block', margin: '0 auto 1rem' }} />
         <h1>IT Sahayak</h1>
         <p>Your IT Support Assistant</p>
       </div>

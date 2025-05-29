@@ -5,3 +5,17 @@
 [2025-05-29 23:41:12] Progress: 50%
 [2025-05-29 23:41:12] Progress: 75%
 [2025-05-29 23:41:12] [INFO] Cleanup complete.
+[2025-05-30 00:18:54] [INFO] Starting system cleanup...
+[2025-05-30 00:18:54] [CLEANED] Library Caches: 14 items deleted.
+[2025-05-30 00:18:54] Progress: 25%
+[2025-05-30 00:18:54] [CLEANED] Var Folders: 337 items deleted.
+[2025-05-30 00:18:54] Progress: 50%
+[2025-05-30 00:18:54] Progress: 75%
+[2025-05-30 00:18:54] [INFO] Cleanup complete.
+[2025-05-30 00:23:11] [INFO] Starting system cleanup...
+[2025-05-30 00:23:11] [CLEANED] Library Caches: 9 items deleted.
+[2025-05-30 00:23:11] Progress: 25%
+[2025-05-30 00:23:11] [CLEANED] Var Folders: 337 items deleted.
+[2025-05-30 00:23:11] Progress: 50%
+[2025-05-30 00:23:11] Progress: 75%
+[2025-05-30 00:23:11] [INFO] Cleanup complete.
