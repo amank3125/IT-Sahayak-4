@@ -1,0 +1,122 @@
+.speed-test-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.speed-test-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.metric {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.metric h3 {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.metric p {
+  margin: 0.5rem 0 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.status {
+  text-align: center;
+  margin: 1rem 0;
+  color: #666;
+}
+
+.speed-test-button {
+  display: block;
+  width: 200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.speed-test-button:hover {
+  background-color: #45a049;
+}
+
+.speed-test-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.speed-test-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.speed-card {
+  background: #f4f6fb;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+  transition: box-shadow 0.2s;
+}
+
+.speed-card.download {
+  border-top: 4px solid #4CAF50;
+}
+.speed-card.upload {
+  border-top: 4px solid #2196F3;
+}
+.speed-card.ping {
+  border-top: 4px solid #FFC107;
+}
+
+.speed-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #4CAF50;
+}
+.speed-card.upload .speed-icon {
+  color: #2196F3;
+}
+.speed-card.ping .speed-icon {
+  color: #FFC107;
+}
+
+.speed-value {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+.speed-value span {
+  font-size: 1.1rem;
+  color: #888;
+  font-weight: 400;
+}
+
+.speed-label {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+  margin-top: 0.5rem;
+} 

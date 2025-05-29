@@ -1,0 +1,7 @@
+[2025-05-29 23:41:11] [INFO] Starting system cleanup...
+[2025-05-29 23:41:12] [CLEANED] Library Caches: 55 items deleted.
+[2025-05-29 23:41:12] Progress: 25%
+[2025-05-29 23:41:12] [CLEANED] Var Folders: 337 items deleted.
+[2025-05-29 23:41:12] Progress: 50%
+[2025-05-29 23:41:12] Progress: 75%
+[2025-05-29 23:41:12] [INFO] Cleanup complete.

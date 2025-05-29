@@ -1,0 +1,98 @@
+{
+  "categories": [
+    {
+      "id": "network",
+      "name": "Network Issues",
+      "icon": "wifi",
+      "issues": [
+        {
+          "id": "wifi-connection",
+          "title": "WiFi Connection Problems",
+          "description": "Issues connecting to the company WiFi network",
+          "solutions": [
+            {
+              "step": 1,
+              "description": "Ensure WiFi is turned on in your device settings",
+              "script": null
+            },
+            {
+              "step": 2,
+              "description": "Forget the network and reconnect",
+              "script": null
+            },
+            {
+              "step": 3,
+              "description": "Reset network settings",
+              "script": "network_reset.sh"
+            }
+          ]
+        },
+        {
+          "id": "vpn-connection",
+          "title": "VPN Connection Issues",
+          "description": "Problems connecting to the company VPN",
+          "solutions": [
+            {
+              "step": 1,
+              "description": "Check if VPN client is installed",
+              "script": "check_vpn.sh"
+            },
+            {
+              "step": 2,
+              "description": "Verify your credentials",
+              "script": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "software",
+      "name": "Software Issues",
+      "icon": "desktop",
+      "issues": [
+        {
+          "id": "software-installation",
+          "title": "Software Installation",
+          "description": "Problems installing company software",
+          "solutions": [
+            {
+              "step": 1,
+              "description": "Check system requirements",
+              "script": "check_system_req.sh"
+            },
+            {
+              "step": 2,
+              "description": "Run installation troubleshooter",
+              "script": "install_troubleshoot.sh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "email",
+      "name": "Email Issues",
+      "icon": "mail",
+      "issues": [
+        {
+          "id": "outlook-sync",
+          "title": "Outlook Not Syncing",
+          "description": "Email synchronization problems in Outlook",
+          "solutions": [
+            {
+              "step": 1,
+              "description": "Check internet connection",
+              "script": "check_connection.sh"
+            },
+            {
+              "step": 2,
+              "description": "Repair Outlook profile",
+              "script": "repair_outlook.sh"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+} 

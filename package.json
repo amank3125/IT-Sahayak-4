@@ -1,0 +1,76 @@
+{
+  "name": "it-agent-desktop",
+  "version": "1.0.0",
+  "description": "IT Support Agent Desktop Application",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron": "cross-env NODE_ENV=development electron .",
+    "start": "concurrently \"cross-env NODE_ENV=development npm run dev\" \"npm run electron\"",
+    "pack": "electron-builder --dir",
+    "dist": "npm run build && electron-builder",
+    "make": "npm run build && electron-builder build --mac"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-modal": "^3.16.3",
+    "systeminformation": "^5.27.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^29.1.4",
+    "electron-builder": "^24.8.0",
+    "electron-is-dev": "^3.0.1",
+    "vite": "^5.1.6"
+  },
+  "build": {
+    "appId": "com.pw.itsahayak",
+    "productName": "PW IT Sahayak",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "scripts/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "scripts",
+        "to": "scripts",
+        "filter": ["**/*"]
+      }
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "release"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.utilities"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
+}
